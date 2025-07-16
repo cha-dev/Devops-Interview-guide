@@ -1,0 +1,14 @@
+#### Linux Interview Quick Guide ####
+
+1. Find and remove the log folders that are older than 7 days in the /var/log directory
+
+find /var/log -type f -name "*.log"
+
+find /var/log -type f -name "*.log" -exec rm {} \;
+
+find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
+
+2. Your application writes logs to /var/log/myapp. You want to:
+   1. Compress the logs older than 7 days
+   2. Delete the logs older than 30 days
+   3. Automate it via a daily cron job
