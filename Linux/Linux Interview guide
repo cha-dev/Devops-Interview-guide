@@ -12,3 +12,6 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
    1. Compress the logs older than 7 days
    2. Delete the logs older than 30 days
    3. Automate it via a daily cron job
+
+3. Service health Monitor script
+   1. services=("nginx" "sshd" "docker")
