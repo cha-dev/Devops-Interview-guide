@@ -15,3 +15,32 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
 
 3. Service health Monitor script
    1. services=("nginx" "sshd" "docker")
+     refer monitor_services.sh
+4. Find and delete files over 100MB
+   find /path/to/directory -type f -size +100M
+
+   find /path/to/directory -type f -size +100M -exec rm -f {} \;
+
+5. How do you remove the first and last line of a file using sed?
+   This task checks your understanding of line-addressing in sed, which is a powerful stream editor used in shell scripting for text manipulation.
+
+  sed '1d; $d' filename.txt
+ sed: Stream editor used to process text line-by-line.
+'1d': Deletes the first line (1 = line number).
+'$d': Deletes the last line ($ = end of file).
+ filename.txt: The file to be processed.
+   sed '1d; $d' file.txt > trimmed.txt
+
+6. How do you get the list of users who logged into the system today?
+   last | grep "$(date '+%a %b %e')" | awk '{print $1}' | sort | uniq
+
+      last: Displays recent login history from /var/log/wtmp.
+date '+%a %b %e':
+Outputs today’s date in the format used by last, e.g., Thu Jun 13.
+%a = abbreviated weekday, %b = abbreviated month, %e = day of month (with space-padding).
+grep "$(date ...)": Filters only login entries for today.
+awk '{print $1}': Extracts the usernames from the matched lines.
+sort | uniq: Removes duplicates to show unique users who logged in today.
+
+
+
