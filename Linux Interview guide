@@ -13,15 +13,81 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
    2. Delete the logs older than 30 days
    3. Automate it via a daily cron job
 
-3. uname - Which Linux user using?
+3. uname - Which Linux user are you using?
 4. sudo apt clean - clean cache, cache will be stored in /var folder
-5. What is inode and how to find it for a file?
+5. What is an inode, and how do you find it for a file?
    ls -i 
-    inode is an index node, it serves as a unique identifier for a specific piece of a metadata on a file system. It's a refernece numnber to 
+    inode is an index node; it serves as a unique identifier for a specific piece of metadata on a file system. It's a reference number to a 
     folder or file.
 
-6. Which command can you use for finding files on a Linux system?
+6. Which command can you use for finding a file on a Linux system?
    using find and locate command
+    find . -name myfile
+7. Command for counting words and lines?
+    wc
+    wc -l
+
+8. How can you combine two commands? or What is pipe used for?
+   We can combine two commands using pipe sign |
+   ex: command1 | command2 
+   Pipe is used to combine two commands and redirect output of command 1 to command 2
+   cat file.txt| wc -l
+
+9. How to view the difference between two files? (diff file1 file2)
+
+10. What is the use of the shred command do? (permanently delete a file which is unable to recover)
+    shred -u file_name
+    shred --remove file_name
+11. How to check system architecture info (dmidecode and lscpu)
+    dmidecode and lscpu
+12. How to combine two files?
+     cat file1 file2
+     cat file1 file2 > file3
+
+13. How can you find the type of file? (using file command)
+     file file.txt
+      output: file.txt: ASCII text
+14. How to sort the content of a file?
+     sort file_name
+     cat file_name | sort
+15. Different ways to access a Linux server remotely (from a Windows machine)?
+      Using some tools
+       putty
+       git bash
+       cmd
+16. What are different types of permissions for a file in Linux?
+     Read (r)
+     Write (w)
+     Executable (x)
+
+17. How to check the permissions given to a file?
+    ls -ltrh
+18. Which permission allows a user to run an executable file (script)?
+    provide Executable (x) permission
+19. How to redirect the output of a command into a file?
+    command > file.txt
+    pwd > file.txt
+20. How to write something into a file without deleting the existing content of the file?
+    We can append the file using >>
+    pwd >> file.txt
+
+21. How to redirect an error of a command into a file?
+     To redirect an error, we need to use 2>
+     To redirect both error and output, we need to use 2>$1
+     cat abc 2> file.txt
+    Automation: 
+22. How to Automate any task or script?
+    Using cron job
+    for which we have crontab and at command.
+
+
+How to check scheduled jobs?
+What is the meaning of this cron job? * * * * *
+If your cron job didn't work, how would you check? (check system time, crontab entry, check /var/log/messages)
+     
+       
+   
+
 
     
 
