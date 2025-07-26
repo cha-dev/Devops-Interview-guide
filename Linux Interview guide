@@ -16,12 +16,12 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
 3. uname - Which Linux user are you using?
 4. sudo apt clean - clean cache, cache will be stored in /var folder
 5. What is an inode, and how do you find it for a file?
-   ls -i 
+   ls -i An 
     inode is an index node; it serves as a unique identifier for a specific piece of metadata on a file system. It's a reference number to a 
     folder or file.
 
 6. Which command can you use for finding a file on a Linux system?
-   using find and locate command
+   using the find and locate command
     find . -name myfile
 7. Command for counting words and lines?
     wc
@@ -55,7 +55,7 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
        putty
        git bash
        cmd
-16. What are different types of permissions for a file in Linux?
+16. What are the different types of permissions for a file in Linux?
      Read (r)
      Write (w)
      Executable (x)
@@ -76,17 +76,84 @@ find /var/log -type f -name "*.log" -mtime +7 -exec rm {} \;
      To redirect both error and output, we need to use 2>$1
      cat abc 2> file.txt
     Automation: 
-22. How to Automate any task or script?
-    Using cron job
+22. How to automate any task or script?
+    Using a cron job
     for which we have crontab and at command.
 
-
-How to check scheduled jobs?
-What is the meaning of this cron job? * * * * *
-If your cron job didn't work, how would you check? (check system time, crontab entry, check /var/log/messages)
+23. How to check scheduled jobs?
+    crontab -l
+24. What is the meaning of this cron job? * * * * *
+    Run the cron jon daily
+25. If your cron job didn't work, how would you check? (check system time, crontab entry, check /var/log/messages)
      
-       
-   
+25. What is a daemon service? 
+    Service keeps running in background
+    Ex: httpd, sshd, chronyd
+26. How to check if a service is running or not?
+     systemctl status service_name
+27. How to start/stop any service?
+     systemctl start service_name
+     systemctl stop service_name
+28. How to check for free disk space? df
+    df -h
+29. How to check the size of a directory's content? du
+    du 
+30. How to check CPU usage for a process? top command
+     top
+31. What is a process in Linux?
+     An instance of a running program.
+     Whenever u start a program/application or execute a command, a process is created.
+     For every process, a unique number is assigned, which is called PID (process ID)
+
+32. How to check if a process is running or not?
+     using ps command
+      pf -ef
+33. How to kill a process?
+     using the kill command
+34. Difference between kill and kill -9
+      kill -9 will terminate the program forcefully
+
+Networking:
+35. How to check if an IP/Server is accessible or not?
+     Use the ping or telnet command
+      ping www.google.com
+
+36. Which command to use to get info about ports?
+      netstat -l 
+37. How to check an open port on a Linux system?
+     netstat putan | grep port_no   
+38. How to check network interfaces in Linux?
+     use netstat and ifconfig command
+
+39. Difference between Telnet and SSH?
+      SSH is secure, and Telnet is not
+
+40. Which service should be running on the server to allow you to connect remotely?
+     ssh or sshd
+
+41. What is SSH?
+     SSH, or Secure Shell, is a network communication protocol that enables two computers/devices to communicate and share data
+42. Why is it called Secure Shell?
+     Because the communication between the host and client will be in an encrypted format.
+43. What is the default port for SSH?
+     22
+44. Which command is used to access a Linux system from a terminal or another Linux server?
+     ss user@198.128.x.x
+
+45. If you want to transfer a large file (10GB) remotely, what would be the first thing you would do?
+     compress the file using gzip, 
+Difference between tar, gzip, and gunzip
+
+
+
+
+
+
+      
+
+
+    
+
 
 
     
